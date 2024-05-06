@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+
+    <!-- Fonts - Space mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS stylesheets -->
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Password generator</title>
+  </head>
+  <body>
+    <main class="main">
+      <header class="header">
+        <h1 class="title">Password generator</h1>
+        <div class="appearance">
+          <ion-icon name="sunny" class="sun-icon icons"></ion-icon>
+          <label class="switch">
+            <input type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <ion-icon name="moon" class="moon-icon icons"></ion-icon>
+        </div>
+      </header>
+      <section class="main-section">
+        <div class="container">
+          <div class="sub-containers lengthiness">
+            <label for="length">Password length</label>
+            <select id="length" name="length" class="select">
+              <option>4</option>
+              <option>6</option>
+              <option>8</option>
+              <option>10</option>
+              <option>12</option>
+              <option>16</option>
+            </select>
+          </div>
+          <div class="sub-containers types">
+            <div class="type">
+              <label for="lowercase" class="input-container">
+                <input
+                  type="checkbox"
+                  name="lowercase"
+                  id="lowercase"
+                  checked="checked"
+                />
+                <div class="left-text">Include lowercase letters</div>
+                <ion-icon name="arrow-forward"></ion-icon>
+                <div class="right-text">a, b, c, ...</div>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="type">
+              <label for="uppercase" class="input-container">
+                <input
+                  type="checkbox"
+                  name="uppercase"
+                  id="uppercase"
+                  checked="checked"
+                />
+                <div class="left-text">Include uppercase letters</div>
+                <ion-icon name="arrow-forward"></ion-icon>
+                <div class="right-text">A, B, C, ...</div>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="type">
+              <label for="numbers" class="input-container">
+                <input type="checkbox" name="numbers" id="numbers" />
+                <div class="left-text">Include numbers</div>
+                <ion-icon name="arrow-forward"></ion-icon>
+                <div class="right-text">1, 2, 3, ...</div>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+            <div class="type">
+              <label for="symbols" class="input-container">
+                <input type="checkbox" name="symbols" id="symbols" />
+                <div class="left-text">Include symbols</div>
+                <ion-icon name="arrow-forward"></ion-icon>
+                <div class="right-text">!@#$ﬁˆ&*()_-+={}[]|;:<>,.?/</div>
+                <span class="checkmark"></span>
+              </label>
+            </div>
+          </div>
+          <div class="sub-containers password">
+            <div class="password-container">
+              <input
+                type="text"
+                name="passwords"
+                id="passwords"
+                placeholder="Password"
+              />
+              <span id="password-strength"></span>
+              <!-- Ex: This is a strong password -->
+            </div>
+          </div>
+          <div class="sub-containers buttons">
+            <div class="btn-container">
+              <button class="btn generate" id="generate">
+                <ion-icon name="lock-closed"></ion-icon>
+                <span>Generate</span>
+              </button>
+              <button class="btn copy-btn" id="copy-btn">
+                <ion-icon name="copy"></ion-icon>
+                <!-- the other one is named 'checkbox' -->
+                <span>Copy</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- IonIcons Icons -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!-- main script -->
+    <script src="./main.js"></script>
+  </body>
+</html>
