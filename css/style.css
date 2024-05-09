@@ -8,6 +8,10 @@
   --dark-color: #1e1926;
   --disabled: #a3a8fe;
 
+  --sucess-color: #4EA72E;
+  --warning-color: #FFC000;
+  --danger-color: #FF0000;
+
   --white-type-zero: #ffffff;
   --white-type-one: #f0f0f0;
   --white-type-two: #ececec;

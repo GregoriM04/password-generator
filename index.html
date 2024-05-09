@@ -38,12 +38,12 @@
           <div class="sub-containers lengthiness">
             <label for="length">Password length</label>
             <select id="length" name="length" class="select">
-              <option>4</option>
-              <option>6</option>
-              <option>8</option>
-              <option>10</option>
-              <option>12</option>
-              <option>16</option>
+              <option value="1">4</option>
+              <option value="2">6</option>
+              <option value="3">8</option>
+              <option value="4">10</option>
+              <option value="5">12</option>
+              <option value="6">16</option>
             </select>
           </div>
           <div class="sub-containers types">
@@ -53,7 +53,6 @@
                   type="checkbox"
                   name="lowercase"
                   id="lowercase"
-                  checked="checked"
                 />
                 <div class="left-text">Include lowercase letters</div>
                 <ion-icon name="arrow-forward"></ion-icon>
@@ -67,7 +66,6 @@
                   type="checkbox"
                   name="uppercase"
                   id="uppercase"
-                  checked="checked"
                 />
                 <div class="left-text">Include uppercase letters</div>
                 <ion-icon name="arrow-forward"></ion-icon>
@@ -114,8 +112,7 @@
               </button>
               <button class="btn copy-btn" id="copy-btn">
                 <ion-icon name="copy"></ion-icon>
-                <!-- the other one is named 'checkbox' -->
-                <span>Copy</span>
+                <span class="copy-text">Copy</span>
               </button>
             </div>
           </div>
