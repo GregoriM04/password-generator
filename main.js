@@ -21,7 +21,9 @@ const selectOption = document.querySelector("#length");
 const generateButton = document.querySelector("#generate");
 const copyButton = document.querySelector("#copy-btn");
 const copySpantext = document.querySelector(".copy-text");
+const copyIcon = document.querySelector(".copy-icon");
 const passwords = document.querySelector("#passwords");
+const passStrength = document.querySelector("#password-strength");
 
 const includeLowercase = document.querySelector("#lowercase");
 const includeUppercase = document.querySelector("#uppercase");
@@ -62,6 +64,20 @@ generateButton.addEventListener("click", () => {
     );
   }
 
+  if (value >= 10) {
+    passStrength.innerHTML = "This is a <u>STRONG</u> password!";
+    passStrength.style.color = "#4EA72E";
+    passwords.style.borderColor = "#4EA72E";
+  } else if (value >= 6) {
+    passStrength.innerHTML = "This is an <u>Acceptable</u> password!";
+    passStrength.style.color = "#FFC000";
+    passwords.style.borderColor = "#FFC000";
+  } else {
+    passStrength.innerHTML = "This is a <u>Weak</u> password!";
+    passStrength.style.color = "#FF0000";
+    passwords.style.borderColor = "#FF0000";
+  }
+
   passwords.value = newGeneration;
 });
 
@@ -69,8 +85,10 @@ copyButton.addEventListener("click", () => {
   navigator.clipboard.writeText(passwords.value);
   copySpantext.innerHTML = "Copied!";
   copyButton.style.backgroundColor = "#4EA72E";
+  copyIcon.setAttribute("name", "checkbox");
   setTimeout(() => {
     copySpantext.innerHTML = "Copy";
     copyButton.style.backgroundColor = "#482ad8";
+    copyIcon.setAttribute("name", "copy");
   }, 2000);
 });
