@@ -37,7 +37,6 @@ body.dark {
 .main {
   height: 100vh;
   width: 70%;
-  /* min-width: 600px; */
   margin: 0 auto;
 }
 
@@ -283,6 +282,11 @@ body.dark .appearance .switch .slider::before {
     height: 23px;
     width: 23px;
   }
+
+  .input-container input:checked ~ .checkmark:after {
+    top: 5px;
+    left: 9px;
+  }
 }
 
 @media (max-width: 1035px) {
@@ -339,6 +343,11 @@ body.dark .appearance .switch .slider::before {
     height: 20px;
     width: 20px;
   }
+
+  .input-container input:checked ~ .checkmark:after {
+    top: 3px;
+    left: 7px;
+  }
 }
 
 @media (max-width: 440px) {
@@ -353,6 +362,11 @@ body.dark .appearance .switch .slider::before {
   .checkmark {
     height: 15px;
     width: 15px;
+  }
+
+  .input-container input:checked ~ .checkmark:after {
+    top: 2px;
+    left: 5px;
   }
 }
 
