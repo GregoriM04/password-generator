@@ -62,7 +62,7 @@ function checkboxChecker() {
   } else {
     return additions;
   }
-};
+}
 
 // click to generate a new password
 generateButton.addEventListener("click", () => {
@@ -91,6 +91,42 @@ generateButton.addEventListener("click", () => {
       );
     }
 
+     /* random charapter transition effect  */
+     (function randomAnimation() {
+      const elements = newGeneration;
+      const startTime = Date.now();
+      const duration = 1500;
+      const letters = elements.split("");
+      const steps = letters.length;
+
+      function map(n, x1, y1, x2, y2) {
+        return Math.min(
+          Math.max(((n - x1) * (y2 - x2)) / (y1 - x1) + x2, x2),
+          y2
+        );
+      }
+
+      const random = (set) => set[Math.floor(Math.random() * set.length)];
+
+      let frame;
+
+      (function randomTransEffect() {
+        frame = requestAnimationFrame(randomTransEffect);
+
+        const step = Math.round(
+          map(Date.now() - startTime, 0, duration, 0, steps)
+        );
+
+        passwords.value = letters
+          .map((s, i) => (step - 1 >= i ? letters[i] : random(inputsAdded)))
+          .join("");
+
+        if (step >= steps) {
+          cancelAnimationFrame(frame);
+        }
+      })();
+    })();
+
     if (value >= 10) {
       passStrength.innerHTML = "This is a <u>STRONG</u> password!";
       passStrength.style.color = "#4EA72E";
@@ -111,7 +147,8 @@ generateButton.addEventListener("click", () => {
 
 // click to copy the new password
 copyButton.addEventListener("click", () => {
-  if (passwords.value == "") { // check if a password was generated
+  if (passwords.value == "") {
+    // check if a password was generated
     passwords.style.borderColor = "#ff0000";
     passStrength.innerHTML = "Must generate first! :)";
     passStrength.style.color = "#ff0000";
