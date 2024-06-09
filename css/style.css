@@ -37,7 +37,7 @@ body.dark {
 .main {
   height: 100vh;
   width: 70%;
-  min-width: 600px;
+  /* min-width: 600px; */
   margin: 0 auto;
 }
 
@@ -165,6 +165,7 @@ body.dark .appearance .switch .slider::before {
   user-select: none;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .input-container input {
@@ -177,7 +178,7 @@ body.dark .appearance .switch .slider::before {
 
 .checkmark {
   position: absolute;
-  top: 4px;
+  top: 2.5px;
   left: 1px;
   height: 25px;
   width: 25px;
@@ -232,8 +233,8 @@ body.dark .appearance .switch .slider::before {
   flex-direction: column;
 }
 
-.password .password-container input {
-  width: 400px;
+.password .password-container .passwords {
+  max-width: 400px;
   height: 50px;
   background-color: transparent;
   color: var(--dark-color);
@@ -277,6 +278,11 @@ body.dark .appearance .switch .slider::before {
   .input-container .right-text {
     font-size: 18px;
   }
+
+  .checkmark {
+    height: 23px;
+    width: 23px;
+  }
 }
 
 @media (max-width: 1035px) {
@@ -284,6 +290,77 @@ body.dark .appearance .switch .slider::before {
   .input-container ion-icon {
     display: none;
   }
+}
+
+@media (max-width: 840px) {
+  .main-section .container {
+    max-width: 85%;
+  }
+
+
+  .buttons .btn-container button {
+    padding: 12px 35px;
+
+  }
+
+}
+
+@media (max-width: 640px) {
+  .header .title {
+    font-size: 32px;
+  }
+
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .buttons .btn-container button {
+    padding: 10px 28px;
+  }
+
+  .generate {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 525px) {
+  .header .title {
+    font-size: 28px;
+  }
+
+  .input-container .left-text {
+    font-size: 15px;
+  }
+
+  .checkmark {
+    height: 20px;
+    width: 20px;
+  }
+}
+
+@media (max-width: 440px) {
+  .header .title {
+    font-size: 22px;
+  }
+
+  .input-container .left-text {
+    font-size: 12px;
+  }
+
+  .checkmark {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@media (max-width: 390px) {
+  .main {
+    min-width: 375px;
+  }
+
 }
 /* Main section end */
 /* Main end */
