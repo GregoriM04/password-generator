@@ -24,38 +24,32 @@ const copySpantext = document.getElementById("copy-text");
 const copyIcon = document.getElementById("copy-icon");
 const passwords = document.getElementById("passwords");
 const passStrength = document.getElementById("password-strength");
-
-const includeLowercase = document.getElementById("lowercase");
-const includeUppercase = document.getElementById("uppercase");
-const includeNumbers = document.getElementById("numbers");
-const includeSymbols = document.getElementById("symbols");
+const allInputs = document.querySelectorAll(".input-container input");
 
 // characters to be used in new passwords
-let lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-let numbers = "0123456789";
-let symbols = "!@#$%&*()-_=+;.?";
+let types = {
+  lowercase: "abcdefghijklmnopqrstuvwxyz",
+  uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+  numbers: "0123456789",
+  symbols: "!@#$%&*()-_=+;.?",
+};
 
 // input checker
 function checkboxChecker() {
-  let additions = "";
-  if (includeLowercase.checked) {
-    additions += lowerCaseLetters;
+  let allValues = "";
+  for (let i = 0; i < allInputs.length; i += 1) {
+    if (allInputs[i].checked) {
+      for (const [key, value] of Object.entries(types)) {
+        if (allInputs[i].id === key) {
+          allValues += value;
+        }
+      }
+    }
   }
-  if (includeUppercase.checked) {
-    additions += upperCaseLetters;
-  }
-  if (includeNumbers.checked) {
-    additions += numbers;
-  }
-  if (includeSymbols.checked) {
-    additions += symbols;
-  }
-
-  if (additions === "") {
+  if (allValues === "") {
     return "none";
   } else {
-    return additions;
+    return allValues;
   }
 }
 
