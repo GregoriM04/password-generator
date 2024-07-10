@@ -28,7 +28,7 @@
           <ion-icon name="sunny" class="sun-icon icons"></ion-icon>
           <label class="switch">
             <input type="checkbox" class="isChecked" />
-            <span class="slider"></span>
+            <span class="slider" id="slider"></span>
           </label>
           <ion-icon name="moon" class="moon-icon icons"></ion-icon>
         </div>
@@ -79,7 +79,7 @@
                 <input type="checkbox" name="symbols" id="symbols" />
                 <div class="left-text">Include symbols</div>
                 <ion-icon name="arrow-forward"></ion-icon>
-                <div class="right-text">!@#$ﬁˆ&*()_-+={}[]|;:<>,.?/</div>
+                <div class="right-text">!@#$%&*()-_=+;.?</div>
                 <span class="checkmark"></span>
               </label>
             </div>
@@ -103,8 +103,8 @@
                 <span>Generate</span>
               </button>
               <button class="btn copy-btn" id="copy-btn">
-                <ion-icon name="copy" class="copy-icon"></ion-icon>
-                <span class="copy-text">Copy</span>
+                <ion-icon name="copy" class="copy-icon" id="copy-icon"></ion-icon>
+                <span class="copy-text" id="copy-text">Copy</span>
               </button>
             </div>
           </div>

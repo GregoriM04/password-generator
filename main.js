@@ -1,7 +1,7 @@
-const body = document.querySelector("body");
-const modeToggle = body.querySelector(".slider");
-
 /* Dark mode settings */
+const body = document.querySelector("body");
+const modeToggle = document.getElementById("slider");
+
 let getMode = localStorage.getItem("mode");
 if (getMode && getMode === "dark") {
   body.classList.toggle("dark");
@@ -17,47 +17,42 @@ modeToggle.addEventListener("click", () => {
 });
 
 /* Main functionality */
-const selectOption = document.querySelector("#length");
-const generateButton = document.querySelector("#generate");
-const copyButton = document.querySelector("#copy-btn");
-const copySpantext = document.querySelector(".copy-text");
-const copyIcon = document.querySelector(".copy-icon");
-const passwords = document.querySelector("#passwords");
-const passStrength = document.querySelector("#password-strength");
+const selectOption = document.getElementById("length");
+const generateButton = document.getElementById("generate");
+const copyButton = document.getElementById("copy-btn");
+const copySpantext = document.getElementById("copy-text");
+const copyIcon = document.getElementById("copy-icon");
+const passwords = document.getElementById("passwords");
+const passStrength = document.getElementById("password-strength");
 
-const includeLowercase = document.querySelector("#lowercase");
-const includeUppercase = document.querySelector("#uppercase");
-const includeNumbers = document.querySelector("#numbers");
-const includeSymbols = document.querySelector("#symbols");
+const includeLowercase = document.getElementById("lowercase");
+const includeUppercase = document.getElementById("uppercase");
+const includeNumbers = document.getElementById("numbers");
+const includeSymbols = document.getElementById("symbols");
 
 // characters to be used in new passwords
 let lowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
 let upperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 let numbers = "0123456789";
-let symbols = "!@#$%ˆ&*()-_=+[]{}|;:,.<>?/";
+let symbols = "!@#$%&*()-_=+;.?";
 
 // input checker
 function checkboxChecker() {
-  let counter = 0;
   let additions = "";
   if (includeLowercase.checked) {
     additions += lowerCaseLetters;
-    counter += 1;
   }
   if (includeUppercase.checked) {
     additions += upperCaseLetters;
-    counter += 1;
   }
   if (includeNumbers.checked) {
     additions += numbers;
-    counter += 1;
   }
   if (includeSymbols.checked) {
     additions += symbols;
-    counter += 1;
   }
 
-  if (counter == 0) {
+  if (additions === "") {
     return "none";
   } else {
     return additions;
@@ -91,8 +86,8 @@ generateButton.addEventListener("click", () => {
       );
     }
 
-     /* random charapter transition effect  */
-     (function randomAnimation() {
+    /* random charapter transition effect  */
+    (function randomAnimation() {
       const elements = newGeneration;
       const startTime = Date.now();
       const duration = 1500;

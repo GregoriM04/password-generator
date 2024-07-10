@@ -301,12 +301,9 @@ body.dark .appearance .switch .slider::before {
     max-width: 85%;
   }
 
-
   .buttons .btn-container button {
     padding: 12px 35px;
-
   }
-
 }
 
 @media (max-width: 640px) {
@@ -374,7 +371,6 @@ body.dark .appearance .switch .slider::before {
   .main {
     min-width: 375px;
   }
-
 }
 /* Main section end */
 /* Main end */
