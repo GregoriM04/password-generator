@@ -65,10 +65,9 @@ generateButton.addEventListener("click", () => {
       passwords.value = "";
     }, 2000);
   } else {
-    let collection = selectOption.selectedOptions;
-    let inputsAdded = checkboxChecker();
     let newGeneration = "";
-    let value = collection[0].label;
+    let inputsAdded = checkboxChecker();
+    let value = selectOption.selectedOptions[0].label;
 
     for (i = 0; i < value; i += 1) {
       newGeneration += inputsAdded.charAt(
