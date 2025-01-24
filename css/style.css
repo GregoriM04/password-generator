@@ -9,7 +9,7 @@
   --white: #ffffff;
 
   /* fonts */
-  --main-font: "Space Mono", monospace;
+  --main-font: "Poppins", serif;
 }
 
 /* Resets */
@@ -19,10 +19,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html {
   font-family: var(--main-font);
 }
 
 body {
+  font-family: inherit;
   background-color: var(--light-color);
   color: var(--dark-color);
 }
@@ -265,10 +269,11 @@ body.dark .appearance .switch .slider::before {
   display: flex;
   justify-content: center;
   align-self: center;
+  cursor: pointer;
 }
 
 .btn:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
 /* Media Queries */
